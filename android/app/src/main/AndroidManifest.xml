@@ -1,0 +1,94 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.bschool">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+     
+  <permission
+    android:name="${applicationId}.permission.C2D_MESSAGE"
+    android:protectionLevel="signature" />
+   <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+   
+   <!-- < Only if you're using GCM or localNotificationSchedule() > -->
+   <uses-permission android:name="android.permission.VIBRATE" />
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+   
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      cleartextTrafficPermitted="true"
+      android:requestLegacyExternalStorage="true"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+
+      android:theme="@style/AppTheme">
+      <meta-data
+     android:name="com.google.android.geo.API_KEY"
+     android:value="AIzaSyCpnI6q-ErrTYfbTYQIcKnLgYuDF7ISfdo"/>
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="standard"
+        android:windowSoftInputMode="adjustPan">
+          <intent-filter>
+                <data android:scheme="branchandroid" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+            <!-- Branch App Links (optional) -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="uobg.app.link" />
+            </intent-filter>
+    <intent-filter android:label="Bschool">
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:scheme="https" android:host="www.mybschool.com"  />
+          <!-- <data android:scheme="app" android:host="open.my.app" /> -->
+      </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+      </activity>
+
+      <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+ <!-- <service android:name="io.invertase.firebase.messaging.RNFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service> -->
+
+<!-- <receiver android:name="io.invertase.firebase.notifications.RNFirebaseNotificationReceiver"</receiver>
+<receiver android:enabled="true" android:exported="true"  android:name="io.invertase.firebase.notifications.RNFirebaseNotificationsRebootReceiver"></receiver> -->
+
+        <service android:name="io.invertase.firebase.messaging.RNFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" /> />
+            </intent-filter>
+        </service>
+
+        <service android:name="io.invertase.firebase.messaging.RNFirebaseBackgroundMessagingService"/>
+        <!-- <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_gdzsepIaUf7wG3dEWb3aBkmcutm0PwJa"/> -->
+        <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_lf2n7iHaaZtBH9eGIrFuoniozCaSjhZm"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_sound" android:resource="@raw/notification"/>
+        <!-- <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/fcmNotification"/> --> 
+  
+    </application>
+
+</manifest>

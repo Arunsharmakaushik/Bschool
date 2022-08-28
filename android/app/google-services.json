@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "696736664653",
+    "project_id": "bschool-bb6e0",
+    "storage_bucket": "bschool-bb6e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696736664653:android:9783f1ea727ddb311a2004",
+        "android_client_info": {
+          "package_name": "com.bschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696736664653-ag7i9pp00dmr84fqf7j41kb4desk65ho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAppHs7_LwsUMjTCt4j8bQSlwt_zCh1bAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696736664653-ag7i9pp00dmr84fqf7j41kb4desk65ho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
